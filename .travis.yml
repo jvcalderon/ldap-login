@@ -1,0 +1,13 @@
+language: node_js
+services:
+  - docker
+install:
+  - docker-compose build
+  - docker-compose up -d
+  - yarn install
+script:
+  - yarn test
+  - yarn run coverall
+after_script:
+  - docker-compose stop
+  - docker-compose rm -f
