@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Provides an easy way to implement login system based on LDAP and JWT",
   "author": "José Vte. Calderón",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "test": "jest --forceExit",
+    "build": "tsc",
     "coverall": "node node_modules/.bin/jest --forceExit --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {

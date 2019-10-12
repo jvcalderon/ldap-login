@@ -3,5 +3,11 @@
   "include": [
     "src/*.ts",
     "src/*.spec.ts"
-  ]
+  ],
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./dist"
+  }
 }
