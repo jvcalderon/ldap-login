@@ -1,0 +1,38 @@
+version: 1
+
+# Entry 1: dc=genealogy,dc=my-company,dc=com
+dn: dc=genealogy,dc=my-company,dc=com
+dc: genealogy
+objectclass: domain
+objectclass: top
+
+# Entry 2: cn=admin,dc=genealogy,dc=my-company,dc=com
+dn: cn=admin,dc=genealogy,dc=my-company,dc=com
+cn: admin
+objectclass: organizationalRole
+objectclass: top
+roleoccupant: cn=jvc,ou=users,dc=my-company,dc=com
+roleoccupant: cn=admin,dc=my-company,dc=com
+
+# Entry 3: cn=user,dc=genealogy,dc=my-company,dc=com
+dn: cn=user,dc=genealogy,dc=my-company,dc=com
+cn: admin
+objectclass: organizationalRole
+objectclass: top
+roleoccupant: cn=jvc,ou=users,dc=my-company,dc=com
+
+# Entry 4: ou=users,dc=my-company,dc=com
+dn: ou=users,dc=my-company,dc=com
+objectclass: organizationalUnit
+objectclass: top
+ou: users
+
+# Entry 5: cn=jvc,ou=users,dc=my-company,dc=com
+dn: cn=jvc,ou=users,dc=my-company,dc=com
+cn: jvc
+givenname: jvc
+objectclass: inetOrgPerson
+objectclass: top
+sn: jvc
+uid: jvc
+userpassword: {MD5}CY9rzUYh03PK3k6DJie09g==

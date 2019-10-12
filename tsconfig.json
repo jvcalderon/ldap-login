@@ -1,0 +1,7 @@
+{
+  "compileOnSave": true,
+  "include": [
+    "src/*.ts",
+    "src/*.spec.ts"
+  ]
+}

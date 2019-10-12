@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+
+  openldap:
+    container_name: openldap
+    build:
+      context: .
+      dockerfile: ./config/docker/Dockerfile
+    image: osixia/openldap:1.2.4
+    ports:
+      - 389:389
+      - 636:636
+    expose:
+      - "389"
+      - "636"
+    env_file:
+      - .env.development
