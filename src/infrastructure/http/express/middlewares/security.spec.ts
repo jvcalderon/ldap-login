@@ -10,20 +10,21 @@ const app = express()
 const request = supertest(app)
 
 const JWT_PRIVATE_KEY = 'XXXX'
+const EXPRESS_PORT = 3010
+const security = new SecurityMiddleware({jwtPrivateKey: JWT_PRIVATE_KEY})
+const http = require('http').Server(app)
+app.use(bodyParser.json())
+app.get('/person', security.hasRole(Roles.ROLE_ADMIN), (req, res) => {
+    res.status(StatusCode.SuccessOK).json({})
+})
+const server = http.listen(EXPRESS_PORT, () => console.log(`Listening on port ${EXPRESS_PORT}!`))
 
 global.console.debug = () => {}
 
 describe('Middleware functionality', function () {
-    
-    beforeAll(function () {
-        const EXPRESS_PORT = 3010
-        const security = new SecurityMiddleware({jwtPrivateKey: JWT_PRIVATE_KEY})
-        const http = require('http').Server(app)
-        app.use(bodyParser.json())
-        app.get('/person', security.hasRole(Roles.ROLE_ADMIN), (req, res) => {
-            res.status(StatusCode.SuccessOK).json({})
-        })
-        http.listen(EXPRESS_PORT, () => console.log(`Listening on port ${EXPRESS_PORT}!`))
+
+    afterAll(async () => {
+        await server.close()
     })
 
     it('GET /person - With a valid token, should allow access to resource', (done) => {

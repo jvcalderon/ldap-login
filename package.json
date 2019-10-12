@@ -6,8 +6,8 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
-    "coverall": "node node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "jest --forceExit",
+    "coverall": "node node_modules/.bin/jest --forceExit --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {
     "hal": "^1.2.0",
