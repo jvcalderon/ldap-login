@@ -1,6 +1,8 @@
 import {Ldap as UserProvider} from './Ldap'
 import {Ldap as AuthManager} from '../authManagers/Ldap'
 
+global.console.debug = () => {}
+
 test('Should return logged user information', async () => {
     const authManager = new AuthManager({url: 'ldap://127.0.0.1:389', baseDn: 'ou=users,dc=my-company,dc=com'})
     await authManager.login('jvc', 'test')

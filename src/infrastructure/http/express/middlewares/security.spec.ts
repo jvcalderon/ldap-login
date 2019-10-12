@@ -11,6 +11,8 @@ const request = supertest(app)
 
 const JWT_PRIVATE_KEY = 'XXXX'
 
+global.console.debug = () => {}
+
 describe('Middleware functionality', function () {
     
     beforeAll(function () {

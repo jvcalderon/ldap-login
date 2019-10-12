@@ -1,5 +1,7 @@
 import {LdapAuthManager, LdapUserProvider, Security} from './index'
 
+global.console.debug = () => {}
+
 describe('LDAP login functionality', function () {
     beforeAll(() => {
         const ldapAuthManager = new LdapAuthManager({

@@ -1,5 +1,7 @@
 import {Ldap} from './Ldap'
 
+global.console.debug = () => {}
+
 test('Should return true if login and password are valid in LDAP server', async () => {
     const ldapManager = new Ldap({url: 'ldap://127.0.0.1:389', baseDn: 'ou=users,dc=my-company,dc=com'})
     const validLogin = await ldapManager.login('jvc', 'test')
