@@ -38,7 +38,6 @@ class Security {
 
 export {
     Security,
-    UserProviderInterface,
     UserProvider,
     LdapAuthManager,
     LdapUserProvider

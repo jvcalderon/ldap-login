@@ -1,7 +1,14 @@
-import * as lib from './infrastructure/security'
-import * as express from './infrastructure/http/express'
+import {Security, UserProvider, LdapAuthManager, LdapUserProvider} from './infrastructure/security'
+import {Roles} from './application/security/Roles'
+import {User} from './application/security/User'
+import {SecurityMiddleware} from './infrastructure/http/express'
 
 export {
-    lib,
-    express
+    Security,
+    UserProvider,
+    LdapAuthManager,
+    LdapUserProvider,
+    Roles,
+    User,
+    SecurityMiddleware
 }
