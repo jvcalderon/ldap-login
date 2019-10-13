@@ -29,5 +29,20 @@
     "supertest": "^4.0.2",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvcalderon/ldap-login.git"
+  },
+  "keywords": [
+    "LDAP",
+    "login",
+    "AuthManager",
+    "UserProvider",
+    "security"
+  ],
+  "bugs": {
+    "url": "https://github.com/jvcalderon/ldap-login/issues"
+  },
+  "homepage": "https://github.com/jvcalderon/ldap-login#readme"
 }
