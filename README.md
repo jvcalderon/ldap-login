@@ -4,9 +4,6 @@ LDAP Login
 [![Build Status](https://travis-ci.org/jvcalderon/ldap-login.svg?branch=master)](https://travis-ci.org/jvcalderon/ldap-login)
 [![Coverage Status](https://coveralls.io/repos/github/jvcalderon/ldap-login/badge.svg?branch=master)](https://coveralls.io/github/jvcalderon/ldap-login?branch=master)
 
-**--WORK IN PROGRESS--**
-------------------------------------------
-
 Provides an easy way to implement a login system based in LDAP and JWT.
 
 ## Features
@@ -213,14 +210,7 @@ ldap.login('your_user', 'your_password').then(user => {
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const {
-  lib: ldapLib, // Contains modules to configure and customize the library
-  express: middleware // Contains express features (middlewares),
-  app: appModels // Contains modules for predefined app behaviour (User and Roles)
-} = require('ldap-login')
-
-import {SecurityMiddleware} from ldapLib
-import {Roles} from appModels
+const {SecurityMiddleware, Roles} = require('ldap-login')
 
 // Use env vars could be a good idea to configure your auth provider and middleware
 // In the previous example (basic login) we've harcoded the vars. You can use env vars instead.
