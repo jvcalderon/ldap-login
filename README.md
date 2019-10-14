@@ -1,3 +1,5 @@
+[![NPM](https://nodei.co/npm/ldap-login.png?downloads=true&stars=true)](https://nodei.co/npm/ldap-login/)
+
 LDAP Login
 =================================
 
