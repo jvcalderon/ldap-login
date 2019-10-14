@@ -1,8 +1,8 @@
 import {UserProviderInterface} from './Interface'
 import {AuthManagerInterface} from '../authManagers/Interface'
 import {UserProvider} from './UserProvider'
-import {Roles} from '../../../application/security/Roles'
-import {User} from '../../../application/security/User'
+import {Roles} from '../../..'
+import {User} from '../../..'
 import * as _ from 'lodash/fp'
 
 interface Config {

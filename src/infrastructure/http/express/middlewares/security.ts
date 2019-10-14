@@ -3,8 +3,8 @@ import * as jwt from 'jsonwebtoken'
 import * as hal from 'hal'
 import StatusCode from 'status-code-enum'
 
-import {User} from '../../../../application/security/User'
-import {Roles} from '../../../../application/security/Roles'
+import {User} from '../../../..'
+import {Roles} from '../../../..'
 
 interface Config {
     jwtPrivateKey: string

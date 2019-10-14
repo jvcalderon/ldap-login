@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken'
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
 import {SecurityMiddleware} from './security'
-import {Roles} from '../../../../application/security/Roles'
+import {Roles} from '../../../..'
 import StatusCode from 'status-code-enum'
 
 const app = express()
