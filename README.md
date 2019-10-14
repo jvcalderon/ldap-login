@@ -110,6 +110,30 @@ const security = new Security({
 })
 ```
 
+### A quick look to exposed modules
+
+Ldap-login exposes the following components:
+
+```javascript
+const {
+    Security,
+    UserProvider,
+    LdapAuthManager,
+    LdapUserProvider,
+    Roles,
+    User,
+    SecurityMiddleware
+} = require('ldap-login')
+```
+
+- Security: Class to compose UserProvider and AuthManager interaction.
+- UserProvider: Class to retrieve instances of User class. It must be extended to provide your own UserProvider 
+implementation. You can treat it as an abstract class.
+- LdapAuthManager: A class to handle login by configurated LDAP server.
+- Roles: A list of roles defined by default for LdapUserProvider in this library.
+- User: Default user model, you can extend it.
+- SecurityMiddleware: Middlewares to use with Express.
+
 ## Usage
 
 The following example uses a predefined UserProvider in login-ldap library. It uses two specific objects 
@@ -148,12 +172,7 @@ To login by specified LDAP server you just need to do:
 
 // Module requirement------------------------------------------------------
 
-const {
-  lib, // Contains modules to configure and customize the library
-  express // Contains express features (middlewares)
-} = require('ldap-login')
-
-const {LdapAuthManager, LdapUserProvider, Security} = lib
+const {LdapAuthManager, LdapUserProvider, Security} = require('ldap-login')
 
 // Module configuration (change it with your server credentials)-----------
 
