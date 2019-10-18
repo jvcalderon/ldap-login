@@ -16,7 +16,7 @@ roleoccupant: cn=admin,dc=my-company,dc=com
 
 # Entry 3: cn=user,dc=genealogy,dc=my-company,dc=com
 dn: cn=user,dc=genealogy,dc=my-company,dc=com
-cn: admin
+cn: user
 objectclass: organizationalRole
 objectclass: top
 roleoccupant: cn=jvc,ou=users,dc=my-company,dc=com
