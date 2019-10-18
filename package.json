@@ -1,6 +1,6 @@
 {
   "name": "ldap-login",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides an easy way to implement login system based on LDAP and JWT",
   "author": "José Vte. Calderón",
   "main": "dist/index.js",
