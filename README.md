@@ -256,6 +256,33 @@ app.get('/my-endpoint', middleware.hasRole(Roles.ROLE_ADMIN), (req, res) => {
     // Here your code
 })
 ```
+**IMPORTANT!** You need to use 'authorization' header to send previously generated query. Here you have an example with
+curl:
+
+```bash
+# Request to get a User with token
+curl -X POST http://localhost:3000/auth \
+-H "Content-Type: application/json" \
+-d '{"login": "admin", "password": "admin"}'
+# Response
+{
+    "_links":{
+        "self":{
+            "href":"/auth"
+        }
+    },
+    "username":"admin",
+    "description":"LDAP administrator",
+    "token":"eyJhbGciOiJIUz...",
+    "roles":[
+        "ROLE_USER",
+        "ROLE_ADMIN"
+    ]
+}
+
+# Now you can use the token to access to secure endpoints
+curl http://localhost:3000/my-endpoint -H "authorization: eyJhbGc..."
+```
 
 ## Customization
 
