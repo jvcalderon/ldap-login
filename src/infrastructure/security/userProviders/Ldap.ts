@@ -41,9 +41,10 @@ export class Ldap extends UserProvider implements UserProviderInterface {
         try {
             const user = await this.ldapClient.search(this.ldapClient.username, {attributes: ['cn', 'description']})
             const get = attr => _.compose(_.get(attr), _.head)(user)
-            const token = super.getToken(get('cn'))
             const roles = await this.getRoles()
-            return new User({username: get('cn'), description: get('description'), token, roles})
+            const userData = {username: get('cn'), description: get('description'), roles}
+            const token = await super.getToken(new User(userData))
+            return new User({...userData, token})
         } catch (err) {
             return this.errHandler(err)
         }

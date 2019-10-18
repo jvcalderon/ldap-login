@@ -1,4 +1,5 @@
 import * as jwt from 'jsonwebtoken'
+import {User} from '../../..'
 
 interface Config {
     jwtPrivateKey: string
@@ -15,7 +16,7 @@ export abstract class UserProvider {
         this.jwtExpiration = jwtExpiration
     }
 
-    public getToken(username: string) {
-        return jwt.sign({data: { username }}, this.jwtPrivateKey, {expiresIn: (this.jwtExpiration) })
+    public getToken(user: User) {
+        return jwt.sign({data: user}, this.jwtPrivateKey, {expiresIn: (this.jwtExpiration) })
     }
 }
