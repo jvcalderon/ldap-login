@@ -72,7 +72,7 @@ describe('Middleware functionality', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end((err, res) => {
-                expect(res.body).toEqual({})
+                expect(res.body).toEqual({success: true})
                 done()
             })
     })
