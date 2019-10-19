@@ -23,9 +23,10 @@ export class SecurityMiddleware {
             const userHasRole = _.compose(_.includes(role), _.getOr([], 'user.roles'))(req)
             if(userHasRole) {
                 next()
+            } else {
+                res.status(StatusCode.ClientErrorForbidden).json(new hal.Resource({}, req.url))
+                res.send()
             }
-            res.status(StatusCode.ClientErrorForbidden).json(new hal.Resource({}, req.url))
-            res.send()
         }
         return [this.getUser(), roleCheck]
     }
@@ -37,9 +38,10 @@ export class SecurityMiddleware {
                     console.debug('Cannot get user by authorization header', err)
                     res.status(StatusCode.ClientErrorUnauthorized).json(new hal.Resource({}, req.url))
                     res.send()
+                } else {
+                    req.user = new User({...decoded.data})
+                    next()
                 }
-                req.user = new User({...decoded.data})
-                next()
             })
         }
     }
