@@ -14,6 +14,7 @@
     "hal": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "ldapjs-client": "^0.1.1",
+    "lodash": "^4.17.15",
     "status-code-enum": "^1.0.0"
   },
   "devDependencies": {
